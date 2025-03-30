@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Desc from './Desc';
 
 const Body = () => {
     const [task,setTask]=useState("");
@@ -14,15 +15,13 @@ const Body = () => {
         console.log(work);
 
     }
+    
     let renderTask=<h1>No Task available</h1>
     if(work.length>0){
     renderTask=work.map((w)=>{
 
             return (
-                <div className='bg-red-400 text-white my-2 w-8/12 flex justify-between text-3xl pl-4 pr-8 py-3'>
-                <h2>{w.task}</h2>
-                <h2>{w.desc}</h2>
-            </div>
+              <Desc a={w.task} b={w.desc}/>
         )
     })
 }
@@ -30,7 +29,7 @@ const Body = () => {
   return (
    
    <>
-   <div className='mt-12 py-12 bg-orange-500 opacity-80'>
+   <div className='my-12 py-12 bg-orange-500 opacity-80'>
     <h1 className='text-center font-bold text-white'>To Do</h1>
     <div>
         <div className='flex justify-center'>
