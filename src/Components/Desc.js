@@ -4,7 +4,7 @@ const Desc = ({a,b,fun}) => {
    
     const [show,setShow]=useState(false);
     const [icon,setIcon]=useState("⬇");
-    const [box,setBox]=useState("☑️");
+    const [box,setBox]=useState("☐");
     const [color,setColor]=useState("gray");
 
     const handleShow=()=>{

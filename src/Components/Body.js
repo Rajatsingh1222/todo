@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Desc from './Desc';
 
 const Body = () => {
@@ -22,9 +22,12 @@ const Body = () => {
         console.log(work);
 
     }
-    if(totalChecked===work.length && totalChecked!=0){
-        alert("yayy,you have done all your task.")
-    }
+    useEffect(()=>{
+        if(totalChecked===work.length && totalChecked!=0){
+            alert("yayy,you have done all your task.")
+        }
+    },[totalChecked])
+   
     
     let renderTask=<h1>No Task available</h1>
     if(work.length>0){
